@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guinée Tourisme | Le Paradis Secret de l'Afrique de l'Ouest</title>
+  <meta name="description" content="Découvrez la Guinée : cascades spectaculaires du Fouta Djallon, plages paradisiaques des Îles de Loos, Mont Nimba classé UNESCO et culture ancestrale.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            brand: {
+              red: '#CE1126',
+              yellow: '#FCD116',
+              green: '#009460',
+              emerald: '#059669',
+              dark: '#081c15',
+              earth: '#2d3748',
+              sand: '#fcfaf6'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-brand-sand text-slate-800 font-sans antialiased selection:bg-brand-green selection:text-white">
+
+  <!-- TOP NOTIFICATION / FLAG STRIP -->
+  <div class="h-1.5 w-full flex">
+    <div class="h-full w-1/3 bg-[#CE1126]"></div>
+    <div class="h-full w-1/3 bg-[#FCD116]"></div>
+    <div class="h-full w-1/3 bg-[#009460]"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="sticky top-0 z-40 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-emerald-950/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-green via-brand-emerald to-emerald-500 flex items-center justify-center text-white shadow-lg shadow-emerald-900/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-serif font-black text-2xl tracking-tight text-slate-900">GUINÉE</span>
+              <span class="text-xs uppercase tracking-widest font-extrabold px-1.5 py-0.5 rounded bg-emerald-100 text-brand-green">Explore</span>
+            </div>
+            <p class="text-[10px] uppercase tracking-wider text-slate-600 font-medium -mt-1">Château d'eau de l'Afrique</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-700">
+          <a href="#regions" class="hover:text-brand-green transition-colors">4 Régions</a>
+          <a href="#destinations" class="hover:text-brand-green transition-colors">Incontournables</a>
+          <a href="#circuits" class="hover:text-brand-green transition-colors">Circuits</a>
+          <a href="#culture" class="hover:text-brand-green transition-colors">Culture & Saveurs</a>
+          <a href="#simulateur" class="hover:text-brand-green transition-colors">Budget & Simulateur</a>
+          <a href="#pratique" class="hover:text-brand-green transition-colors">Guide Pratique</a>
+        </nav>
+
+        <!-- Actions / Carnet Button -->
+        <div class="hidden md:flex items-center gap-4">
+          <button id="open-carnet-btn" class="relative inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-full transition-all">
+            <i data-lucide="bookmark" class="w-4 h-4 text-brand-green"></i>
+            <span>Mon Carnet</span>
+            <span id="carnet-badge" class="bg-brand-red text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+          </button>
+          
+          <a href="#planifier" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-green hover:bg-emerald-700 text-white font-semibold text-sm shadow-md shadow-emerald-800/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+            <span>Organiser mon voyage</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-toggle" aria-label="Menu" class="md:hidden p-2 text-slate-700 hover:text-brand-green">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4">
+      <a href="#regions" class="block text-base font-semibold text-slate-800 hover:text-brand-green mobile-nav-link">Les 4 Régions Naturelles</a>
+      <a href="#destinations" class="block text-base font-semibold text-slate-800 hover:text-brand-green mobile-nav-link">Sites Incontournables</a>
+      <a href="#circuits" class="block text-base font-semibold text-slate-800 hover:text-brand-green mobile-nav-link">Circuits & Aventures</a>
+      <a href="#culture" class="block text-base font-semibold text-slate-800 hover:text-brand-green mobile-nav-link">Culture & Gastronomie</a>
+      <a href="#simulateur" class="block text-base font-semibold text-slate-800 hover:text-brand-green mobile-nav-link">Calculateur de Budget</a>
+      <a href="#pratique" class="block text-base font-semibold text-slate-800 hover:text-brand-green mobile-nav-link">Conseils Pratiques & Visas</a>
+      <div class="pt-4 border-t border-slate-100 flex flex-col gap-3">
+        <button id="mobile-carnet-btn" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-100 font-semibold text-slate-800">
+          <i data-lucide="bookmark" class="w-4 h-4 text-brand-green"></i>
+          <span>Voir mon carnet de voyage</span>
+          <span id="mobile-carnet-badge" class="bg-brand-red text-white text-xs px-2 py-0.5 rounded-full">0</span>
+        </button>
+        <a href="#planifier" class="w-full text-center py-3 rounded-xl bg-brand-green text-white font-semibold">Organiser mon voyage</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=2000&auto=format&fit=crop" 
+           alt="Nature luxuriante et cascades de Guinée" 
+           class="w-full h-full object-cover object-center scale-105 animate-kenburns opacity-45">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/30"></div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      
+      <!-- Guinea Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium mb-6 animate-fade-in">
+        <span class="flex h-2 w-2 rounded-full bg-brand-yellow animate-ping"></span>
+        <span class="text-brand-yellow font-semibold">Bienvenue en République de Guinée</span>
+        <span class="text-white/60">•</span>
+        <span class="text-slate-200">Afrique de l'Ouest</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] mb-6 drop-shadow-md">
+        Le Paradis Secret de la <span class="bg-gradient-to-r from-yellow-300 via-emerald-400 to-green-300 bg-clip-text text-transparent">Nature Sauvage</span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+        Des plateaux brumeux du <strong>Fouta Djallon</strong> aux plages de sable doré des <strong>Îles de Loos</strong>, en passant par les sanctuaires mystiques du <strong>Mont Nimba</strong>. Vivez une expérience authentique et inoubliable.
+      </p>
+
+      <!-- Search & Filter Bar -->
+      <div class="max-w-4xl mx-auto bg-white/95 backdrop-blur-xl p-3 sm:p-4 rounded-2xl shadow-2xl text-slate-800 border border-white/40">
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-left">
+          
+          <div class="p-2 sm:border-r border-slate-200">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">Région</label>
+            <select id="hero-region-filter" class="w-full text-sm font-semibold bg-transparent text-slate-800 focus:outline-none cursor-pointer">
+              <option value="all">Toutes les régions</option>
+              <option value="moyenne">Fouta Djallon (Moyenne)</option>
+              <option value="basse">Basse Guinée (Côte)</option>
+              <option value="foret">Guinée Forestière (Sud)</option>
+              <option value="haute">Haute Guinée (Savane)</option>
+            </select>
+          </div>
+
+          <div class="p-2 sm:border-r border-slate-200">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">Type d'expérience</label>
+            <select id="hero-type-filter" class="w-full text-sm font-semibold bg-transparent text-slate-800 focus:outline-none cursor-pointer">
+              <option value="all">Toutes les envies</option>
+              <option value="waterfall">Cascades & Randonnées</option>
+              <option value="beach">Plages & Îles</option>
+              <option value="wildlife">Faune & Forêts UNESCO</option>
+              <option value="culture">Histoire & Traditions</option>
+            </select>
+          </div>
+
+          <div class="p-2 sm:border-r border-slate-200">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-1">Durée idéale</label>
+            <select id="hero-duration-filter" class="w-full text-sm font-semibold bg-transparent text-slate-800 focus:outline-none cursor-pointer">
+              <option value="all">Peu importe</option>
+              <option value="weekend">Week-end (2-3 jours)</option>
+              <option value="week">1 Semaine</option>
+              <option value="expedition">Grand Circuit (10-15 jours)</option>
+            </select>
+          </div>
+
+          <div class="flex items-center">
+            <button id="hero-search-btn" class="w-full h-full min-h-[48px] bg-brand-green hover:bg-emerald-700 text-white font-bold rounded-xl flex items-center justify-center gap-2 shadow-md transition-all">
+              <i data-lucide="search" class="w-5 h-5"></i>
+              <span>Explorer</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Quick Highlights / Key Figures -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto mt-14 pt-10 border-t border-white/10 text-white">
+        <div>
+          <div class="font-serif text-3xl sm:text-4xl font-extrabold text-brand-yellow">+150</div>
+          <p class="text-xs sm:text-sm text-slate-300">Cascades & Chutes féeriques</p>
+        </div>
+        <div>
+          <div class="font-serif text-3xl sm:text-4xl font-extrabold text-emerald-400">4</div>
+          <p class="text-xs sm:text-sm text-slate-300">Régions naturelles uniques</p>
+        </div>
+        <div>
+          <div class="font-serif text-3xl sm:text-4xl font-extrabold text-brand-yellow">1 752 m</div>
+          <p class="text-xs sm:text-sm text-slate-300">Mont Nimba (Toit de l'Afrique de l'Ouest)</p>
+        </div>
+        <div>
+          <div class="font-serif text-3xl sm:text-4xl font-extrabold text-emerald-400">100%</div>
+          <p class="text-xs sm:text-sm text-slate-300">Hospitalité & Authenticité</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LES 4 RÉGIONS NATURELLES DE LA GUINÉE -->
+  <section id="regions" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green bg-emerald-50 px-3 py-1 rounded-full">Diversité Géographique Inégalée</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-black text-slate-900 mt-3 mb-4">
+          Une Guinée, Quatre Mondes Fascinants
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          La Guinée est bénie par une géographie singulière divisée en quatre régions naturelles aux climats, paysages et cultures singulières.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Region 1: Basse Guinée -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+          <div class="h-56 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" 
+                 alt="Basse Guinée - Plages et Océan" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-emerald-600/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              Guinée Maritime
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-slate-900 group-hover:text-brand-green transition-colors mb-2">Basse Guinée</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Le littoral atlantique bordé de mangroves, les îles paradisiaques de Loos, la capitale Conakry et les plages bordées de cocotiers de Bel-Air.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] text-slate-500">
+                <span class="bg-slate-100 px-2 py-0.5 rounded">Îles de Loos</span>
+                <span class="bg-slate-100 px-2 py-0.5 rounded">Chutes Soumba</span>
+                <span class="bg-slate-100 px-2 py-0.5 rounded">Bel-Air</span>
+              </div>
+            </div>
+            <button onclick="filterByRegion('basse')" class="w-full py-2.5 rounded-xl border border-slate-200 hover:border-brand-green hover:bg-emerald-50 text-slate-700 hover:text-brand-green text-sm font-semibold transition-all flex items-center justify-center gap-2">
+              <span>Voir les sites</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Region 2: Moyenne Guinée / Fouta Djallon -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-lg border-2 border-emerald-500/30 bg-white hover:shadow-2xl transition-all duration-300 flex flex-col justify-between ring-2 ring-emerald-500/10">
+          <div class="h-56 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?q=80&w=800&auto=format&fit=crop" 
+                 alt="Fouta Djallon - Cascades et falaises" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-brand-green text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              ⭐ Le Château d'eau
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-slate-900 group-hover:text-brand-green transition-colors mb-2">Moyenne Guinée</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Le légendaire Fouta Djallon : fraîcheur alpine, gorges profondes, cascades vertigineuses (Kinkon, Ditinn) et la mystérieuse Dame de Mali.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] text-slate-500">
+                <span class="bg-emerald-50 text-brand-green font-medium px-2 py-0.5 rounded">Chutes Kinkon</span>
+                <span class="bg-emerald-50 text-brand-green font-medium px-2 py-0.5 rounded">Dame de Mali</span>
+                <span class="bg-emerald-50 text-brand-green font-medium px-2 py-0.5 rounded">Dalaba</span>
+              </div>
+            </div>
+            <button onclick="filterByRegion('moyenne')" class="w-full py-2.5 rounded-xl bg-brand-green hover:bg-emerald-700 text-white text-sm font-semibold transition-all flex items-center justify-center gap-2 shadow-sm">
+              <span>Voir les merveilles</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Region 3: Haute Guinée -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+          <div class="h-56 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=800&auto=format&fit=crop" 
+                 alt="Haute Guinée - Savane et Fleuve Niger" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-amber-600/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              Berceau Mandingue
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-slate-900 group-hover:text-brand-green transition-colors mb-2">Haute Guinée</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                La savane dorée, les méandres du puissant fleuve Niger (Djoliba), Kankan la cité religieuse et le Parc National du Haut-Niger avec ses animaux sauvages.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] text-slate-500">
+                <span class="bg-slate-100 px-2 py-0.5 rounded">Fleuve Niger</span>
+                <span class="bg-slate-100 px-2 py-0.5 rounded">Parc National</span>
+                <span class="bg-slate-100 px-2 py-0.5 rounded">Kankan</span>
+              </div>
+            </div>
+            <button onclick="filterByRegion('haute')" class="w-full py-2.5 rounded-xl border border-slate-200 hover:border-brand-green hover:bg-emerald-50 text-slate-700 hover:text-brand-green text-sm font-semibold transition-all flex items-center justify-center gap-2">
+              <span>Voir les sites</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Region 4: Guinée Forestière -->
+        <div class="group relative rounded-3xl overflow-hidden shadow-lg border border-slate-100 bg-white hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+          <div class="h-56 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop" 
+                 alt="Guinée Forestière - Mont Nimba et Forêts denses" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-emerald-800/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              Patrimoine UNESCO
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-slate-900 group-hover:text-brand-green transition-colors mb-2">Guinée Forestière</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Une canopée primaire dense, la chaîne du Mont Nimba, les célèbres ponts de lianes sacrés et les chimpanzés intelligents de Bossou.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] text-slate-500">
+                <span class="bg-slate-100 px-2 py-0.5 rounded">Mont Nimba</span>
+                <span class="bg-slate-100 px-2 py-0.5 rounded">Chimpanzés Bossou</span>
+                <span class="bg-slate-100 px-2 py-0.5 rounded">Ponts de lianes</span>
+              </div>
+            </div>
+            <button onclick="filterByRegion('foret')" class="w-full py-2.5 rounded-xl border border-slate-200 hover:border-brand-green hover:bg-emerald-50 text-slate-700 hover:text-brand-green text-sm font-semibold transition-all flex items-center justify-center gap-2">
+              <span>Voir les sites</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SITES INCONTOURNABLES (Interactive Gallery & Filters) -->
+  <section id="destinations" class="py-24 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green bg-emerald-100 px-3 py-1 rounded-full">Top Destinations</span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-black text-slate-900 mt-3">
+            Les Merveilles Incontournables
+          </h2>
+          <p class="text-slate-600 text-base sm:text-lg mt-2 max-w-2xl">
+            Cliquez sur un site pour découvrir son histoire, comment s'y rendre, les meilleures saisons et l'ajouter à votre carnet.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2 p-1.5 bg-white rounded-2xl shadow-sm border border-slate-200">
+          <button class="filter-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all" data-category="all">
+            Tous les sites (<span id="count-all">0</span>)
+          </button>
+          <button class="filter-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-brand-green transition-all" data-category="moyenne">
+            Fouta Djallon
+          </button>
+          <button class="filter-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-brand-green transition-all" data-category="basse">
+            Côte & Îles
+          </button>
+          <button class="filter-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-brand-green transition-all" data-category="foret">
+            Forêt & Nimba
+          </button>
+          <button class="filter-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-brand-green transition-all" data-category="haute">
+            Haute Guinée
+          </button>
+        </div>
+      </div>
+
+      <!-- Destinations Grid (Generated by JS) -->
+      <div id="destinations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ITINÉRAIRES & CIRCUITS GUIDÉS -->
+  <section id="circuits" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green bg-emerald-50 px-3 py-1 rounded-full">Prêts à Voyager</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-black text-slate-900 mt-3 mb-4">
+          Nos Circuits Thématiques Recommandés
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          Conçus avec des guides locaux guinéens expérimentés pour vous garantir confort, sécurité et immersion intégrale.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Circuit 1 -->
+        <div class="rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=800&auto=format&fit=crop" 
+                 alt="Trek du Fouta Djallon" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-brand-yellow"></i> 7 Jours / 6 Nuits
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Trek & Aventure</span>
+              <h3 class="font-serif text-xl font-bold">L'Épopée des Cascades du Fouta</h3>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <ul class="space-y-2.5 text-sm text-slate-600">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Kindia - Voile de la Mariée</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Pita - Chutes de Kinkon & Kambadaga</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Dalaba & ses forêts de pins suisses</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Randonnée au sommet de la Dame de Mali</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-slate-500 block">À partir de</span>
+                <span class="font-bold text-xl text-slate-900">4 500 000 GNF <span class="text-xs font-normal text-slate-500">(~480 €)</span></span>
+              </div>
+              <button onclick="selectCircuit('Fouta 7 jours', 4500000)" class="px-4 py-2 rounded-xl bg-brand-green hover:bg-emerald-700 text-white font-semibold text-xs shadow-sm transition-all">
+                Sélectionner
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Circuit 2 -->
+        <div class="rounded-3xl border-2 border-brand-green overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group relative">
+          <div class="absolute -top-3 right-8 bg-brand-red text-white text-[11px] font-black uppercase px-3 py-1 rounded-full shadow-md z-10 tracking-wider">
+            Coup de Cœur
+          </div>
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=800&auto=format&fit=crop" 
+                 alt="Sanctuaire du Mont Nimba" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-brand-yellow"></i> 6 Jours / 5 Nuits
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Écotourisme & Faune</span>
+              <h3 class="font-serif text-xl font-bold">Mystères du Mont Nimba & Bossou</h3>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <ul class="space-y-2.5 text-sm text-slate-600">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Observation des chimpanzés outils de Bossou</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Ascension guidée de la réserve du Mont Nimba</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Traversée des ponts de lianes traditionnels</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Rencontre avec les gardiens des forêts sacrées</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-slate-500 block">À partir de</span>
+                <span class="font-bold text-xl text-slate-900">5 800 000 GNF <span class="text-xs font-normal text-slate-500">(~620 €)</span></span>
+              </div>
+              <button onclick="selectCircuit('Nimba & Bossou 6 jours', 5800000)" class="px-4 py-2 rounded-xl bg-brand-green hover:bg-emerald-700 text-white font-semibold text-xs shadow-sm transition-all">
+                Sélectionner
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Circuit 3 -->
+        <div class="rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" 
+                 alt="Îles de Loos & Conakry" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4 bg-emerald-950/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-brand-yellow"></i> 3 Jours / 2 Nuits
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Détente & Océan</span>
+              <h3 class="font-serif text-xl font-bold">Escapade Tropicale aux Îles de Loos</h3>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <ul class="space-y-2.5 text-sm text-slate-600">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Traversée en pirogue vers Tamara, Kassa & Room</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Déjeuner poissons braisés & bananes plantains</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Visite de la Grande Mosquée Fayçal & Musée National</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green flex-shrink-0"></i> Coucher de soleil sur l'océan Atlantique</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-slate-500 block">À partir de</span>
+                <span class="font-bold text-xl text-slate-900">2 200 000 GNF <span class="text-xs font-normal text-slate-500">(~235 €)</span></span>
+              </div>
+              <button onclick="selectCircuit('Îles de Loos 3 jours', 2200000)" class="px-4 py-2 rounded-xl bg-brand-green hover:bg-emerald-700 text-white font-semibold text-xs shadow-sm transition-all">
+                Sélectionner
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CULTURE & GASTRONOMIE GUINÉENNE -->
+  <section id="culture" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+    <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-green/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-yellow bg-yellow-950/60 border border-yellow-500/30 px-3.5 py-1 rounded-full">Art de Vivre & Traditions</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-black mt-3 mb-4">
+          Saveurs, Musiques & Héritage Ancestral
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg">
+          Voyager en Guinée, c'est éveiller tous ses sens au rythme du djembé, du balafon et de recettes transmises de génération en génération.
+        </p>
+      </div>
+
+      <!-- Culture Tabs -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Tab 1: Gastronomie -->
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:border-brand-yellow/40 transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-brand-yellow flex items-center justify-center mb-6">
+            <i data-lucide="utensils" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold mb-3 text-white">Saveurs Culinaires</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Dégustez les plats emblématiques généreux qui font la fierté des tables guinéennes :
+          </p>
+          <div class="space-y-3 text-sm">
+            <div class="p-3 rounded-xl bg-white/5">
+              <span class="font-bold text-brand-yellow">Riz sauce feuille (Kansiyé)</span> : Feuilles de patate douce ou manioc pilées, pâte d'arachide et viande tendre.
+            </div>
+            <div class="p-3 rounded-xl bg-white/5">
+              <span class="font-bold text-brand-yellow">Fouti & Soupe de Konkoé</span> : Riz blanc et gombo frais accompagné de poisson-chat fumé typique du littoral.
+            </div>
+            <div class="p-3 rounded-xl bg-white/5">
+              <span class="font-bold text-brand-yellow">Boissons du terroir</span> : Pur jus de Bissap, jus de Gingembre tonique et jus de pain de singe (Baobab).
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Musique & Rythmes -->
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:border-emerald-500/40 transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6">
+            <i data-lucide="music" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold mb-3 text-white">Rythmes & Ballets</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Patrie des légendaires Ballets Africains et des maîtres griots mandingues :
+          </p>
+          <div class="space-y-3 text-sm">
+            <div class="p-3 rounded-xl bg-white/5">
+              <span class="font-bold text-emerald-400">Le Djembé & le Balafon</span> : Instruments mythiques nés dans la savane mandingue avec le Sosso-Bala sacré.
+            </div>
+            <div class="p-3 rounded-xl bg-white/5">
+              <span class="font-bold text-emerald-400">La Kora mélodieuse</span> : Harpe-luth poétique résonnant lors des cérémonies traditionnelles.
+            </div>
+            <div class="p-3 rounded-xl bg-white/5">
+              <span class="font-bold text-emerald-400">Fêtes traditionnelles</span> : La Fête de la Mare de Baro, danses masquées du Kakilambé en Basse Guinée.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Artisanat & Tissus -->
+        <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:border-red-500/40 transition-all">
+          <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center mb-6">
+            <i data-lucide="sparkles" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-serif text-2xl font-bold mb-3 text-white">Artisanat d'Art</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Le savoir-faire guinéen façonne des textiles d'exception et des sculptures de maître :
+          </p>
+          <div class="space-y-3 text-sm">
+            <div class="p-3 rounded-xl bg-white/5">
+              <span class="font-bold text-red-400">Lébè Indigo & Kendeli</span> : Coton tissé à la main et teint à l'indigo naturel au Fouta Djallon.
+            </div>
+            <div class="p-3 rounded-xl bg-white/5">
+              <span class="font-bold text-red-400">Sculptures Baga</span> : Masque d'épaule Nimba (D'mba), symbole universel de fécondité exposé au Louvre.
+            </div>
+            <div class="p-3 rounded-xl bg-white/5">
+              <span class="font-bold text-red-400">Maroquinerie & Vannerie</span> : Sacs en cuir tressé, chapeaux en raphia du Fouta pour se protéger du soleil.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATEUR DE BUDGET & SIMULATEUR INTERACTIF -->
+  <section id="simulateur" class="py-24 bg-white relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green bg-emerald-50 px-3 py-1 rounded-full">Simulateur Intelligent</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-black text-slate-900 mt-3 mb-3">
+          Estimez le Budget de Votre Séjour
+        </h2>
+        <p class="text-slate-600">
+          Ajustez la durée, le nombre de voyageurs et votre style de voyage pour obtenir une estimation instantanée en Francs Guinéens (GNF) et en Euros (€).
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-950 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-emerald-900/50">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+          <!-- Controls -->
+          <div class="space-y-6">
+            
+            <!-- Durée -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-semibold text-slate-200">Durée du voyage</label>
+                <span id="calc-days-display" class="text-base font-bold text-brand-yellow">7 jours</span>
+              </div>
+              <input type="range" id="calc-days" min="2" max="21" value="7" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-green">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                <span>2 jours</span>
+                <span>10 jours</span>
+                <span>21 jours</span>
+              </div>
+            </div>
+
+            <!-- Nombre de personnes -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-semibold text-slate-200">Voyageurs</label>
+                <span id="calc-people-display" class="text-base font-bold text-brand-yellow">2 personnes</span>
+              </div>
+              <input type="range" id="calc-people" min="1" max="10" value="2" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-green">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                <span>Solo (1)</span>
+                <span>Couple (2)</span>
+                <span>Groupe (10)</span>
+              </div>
+            </div>
+
+            <!-- Standing hébergement -->
+            <div>
+              <label class="text-sm font-semibold text-slate-200 block mb-2">Style d'aventure & Hébergement</label>
+              <div class="grid grid-cols-3 gap-2.5">
+                <button type="button" class="calc-style-btn active p-3 rounded-xl border border-emerald-500 bg-emerald-900/40 text-center text-xs font-semibold" data-multiplier="1">
+                  <div class="text-lg mb-1">🏕️</div>
+                  <span>Aventure & Écolodge</span>
+                </button>
+                <button type="button" class="calc-style-btn p-3 rounded-xl border border-slate-700 bg-slate-800/60 hover:border-slate-500 text-center text-xs font-semibold" data-multiplier="1.6">
+                  <div class="text-lg mb-1">🏨</div>
+                  <span>Confort & Hôtels</span>
+                </button>
+                <button type="button" class="calc-style-btn p-3 rounded-xl border border-slate-700 bg-slate-800/60 hover:border-slate-500 text-center text-xs font-semibold" data-multiplier="2.5">
+                  <div class="text-lg mb-1">⭐</div>
+                  <span>Premium & 4x4 Privé</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Options Guide & 4x4 -->
+            <div class="pt-2 border-t border-slate-800 space-y-2">
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" id="calc-guide" checked class="w-4 h-4 rounded text-brand-green accent-brand-green">
+                <span class="text-sm text-slate-300">Guide local certifié inclus (+350 000 GNF/j)</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" id="calc-car" checked class="w-4 h-4 rounded text-brand-green accent-brand-green">
+                <span class="text-sm text-slate-300">Véhicule 4x4 tout-terrain avec chauffeur (+600 000 GNF/j)</span>
+              </label>
+            </div>
+
+          </div>
+
+          <!-- Result Display -->
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <span class="text-xs uppercase font-extrabold tracking-widest text-brand-green">Estimation Tout Compris</span>
+              <div class="mt-4">
+                <div id="calc-total-gnf" class="font-serif text-3xl sm:text-4xl font-black text-brand-yellow">
+                  12 600 000 GNF
+                </div>
+                <div id="calc-total-eur" class="text-slate-300 font-medium text-lg mt-1">
+                  soit environ 1 340 € pour le séjour
+                </div>
+                <div id="calc-per-person" class="text-xs text-slate-400 mt-1">
+                  ~670 € par personne
+                </div>
+              </div>
+
+              <div class="mt-6 space-y-2.5 text-xs text-slate-300 border-t border-white/10 pt-4">
+                <div class="flex justify-between">
+                  <span>Hébergement & Repas locaux</span>
+                  <span id="detail-hebergement" class="font-semibold text-white">Inclus</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Déplacements & Carburant</span>
+                  <span id="detail-transport" class="font-semibold text-white">4x4 inclus</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Droits d'entrée sur les sites & chutes</span>
+                  <span class="font-semibold text-brand-green">Inclus</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-4">
+              <a href="#planifier" class="w-full block text-center py-3.5 px-6 rounded-xl bg-brand-green hover:bg-emerald-600 text-white font-bold text-sm shadow-lg shadow-emerald-950/50 transition-all">
+                Demander un devis détaillé gratuit
+              </a>
+              <p class="text-[11px] text-center text-slate-400 mt-2">
+                Aucun paiement requis en ligne • Accompagnement sur-mesure
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GUIDE PRATIQUE & FORMALITÉS -->
+  <section id="pratique" class="py-24 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-brand-green bg-emerald-100 px-3 py-1 rounded-full">Préparez votre départ</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-black text-slate-900 mt-3 mb-4">
+          Guide Pratique du Voyageur en Guinée
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          Toutes les informations essentielles pour un voyage serein et parfaitement préparé.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Visa -->
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-brand-green flex items-center justify-center mb-4">
+            <i data-lucide="file-text" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">e-Visa Guinée</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Accessible en ligne via le portail officiel de la PAF Guinée (<a href="https://paf.gov.gn" target="_blank" class="text-brand-green font-semibold underline">paf.gov.gn</a>). Délivré sous 72h.
+          </p>
+        </div>
+
+        <!-- Santé -->
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">Santé & Vaccins</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Le vaccin contre la <strong>fièvre jaune</strong> est obligatoire (carnet jaune exigé à l'arrivée). Traitement antipaludique conseillé.
+          </p>
+        </div>
+
+        <!-- Monnaie -->
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+          <div class="w-12 h-12 rounded-2xl bg-red-100 text-brand-red flex items-center justify-center mb-4">
+            <i data-lucide="banknote" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">Monnaie (GNF)</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Le <strong>Franc Guinéen (GNF)</strong>. 1 € ≈ 9 400 GNF. Les paiements en espèces sont privilégiés à l'intérieur du pays. Distributeurs à Conakry et Labé.
+          </p>
+        </div>
+
+        <!-- Meilleure Période -->
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
+          <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+            <i data-lucide="sun" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-slate-900 mb-2">Quand Partir ?</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            <strong>Novembre à Mars</strong> : Saison sèche idéale (cascades pleines, ciel bleu). Les nuits sont très fraîches au Fouta (prévoyez une laine).
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="mt-14 max-w-3xl mx-auto bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-4">
+        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-4">Questions Fréquentes (FAQ)</h3>
+
+        <div class="border-b border-slate-100 pb-3">
+          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-slate-800 hover:text-brand-green py-2">
+            <span>Comment se déplacer à l'intérieur du pays ?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+          </button>
+          <div class="faq-content hidden text-sm text-slate-600 pt-2 pb-1">
+            La location d'un véhicule 4x4 avec chauffeur reste le moyen le plus confortable et sécurisé pour arpenter les pistes pittoresques du Fouta et de la Guinée Forestière. Des taxis-brousse relient aussi les grandes villes.
+          </div>
+        </div>
+
+        <div class="border-b border-slate-100 pb-3">
+          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-slate-800 hover:text-brand-green py-2">
+            <span>La Guinée est-elle sécurisée pour les touristes ?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+          </button>
+          <div class="faq-content hidden text-sm text-slate-600 pt-2 pb-1">
+            Oui, les Guinéens sont réputés pour leur hospitalité légendaire (« Seneguidia »). Les zones touristiques du Fouta Djallon, de Kindia, des Îles de Loos et des Monts Nimba accueillent chaleureusement les randonneurs et voyageurs en toute quiétude.
+          </div>
+        </div>
+
+        <div class="border-b border-slate-100 pb-3">
+          <button class="faq-toggle w-full flex items-center justify-between text-left font-semibold text-slate-800 hover:text-brand-green py-2">
+            <span>Quelle est la langue parlée ?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+          </button>
+          <div class="faq-content hidden text-sm text-slate-600 pt-2 pb-1">
+            Le français est la langue officielle. Les trois langues nationales majeures sont le Pular (Fouta), le Malinké (Haute Guinée) et le Soussou (Basse Guinée). Un simple mot de salutation local vous ouvrira tous les cœurs !
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FORMULAIRE DE CONTACT & ORGANISATION DE VOYAGE -->
+  <section id="planifier" class="py-24 bg-white relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-gradient-to-tr from-brand-sand via-emerald-50 to-amber-50 p-8 sm:p-12 rounded-3xl border border-emerald-100 shadow-xl">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <div class="w-12 h-12 bg-brand-green text-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-md">
+            <i data-lucide="send" class="w-6 h-6"></i>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-black text-slate-900">
+            Préparez Votre Aventure Guinéenne
+          </h2>
+          <p class="text-slate-600 text-sm mt-2">
+            Remplissez ce formulaire pour recevoir un itinéraire personnalisé et les coordonnées de guides certifiés selon vos envies.
+          </p>
+        </div>
+
+        <form id="contact-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Votre Nom & Prénom *</label>
+              <input type="text" id="form-name" required placeholder="Ex: Mamadou Diallo" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-green text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Votre Email *</label>
+              <input type="email" id="form-email" required placeholder="Ex: contact@exemple.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-green text-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Téléphone / WhatsApp</label>
+              <input type="tel" id="form-phone" placeholder="Ex: +224 620 00 00 00" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-green text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Région(s) souhaitée(s)</label>
+              <select id="form-region" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-green text-sm">
+                <option value="Toutes">Tout le pays (Grand Tour)</option>
+                <option value="Fouta">Moyenne Guinée (Fouta Djallon)</option>
+                <option value="Maritime">Basse Guinée (Côte & Îles)</option>
+                <option value="Foret">Guinée Forestière (Nimba & Bossou)</option>
+                <option value="Haute">Haute Guinée (Savane & Niger)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Votre projet de voyage & besoins spécifiques</label>
+            <textarea id="form-message" rows="4" placeholder="Indiquez vos dates prévues, le nombre de voyageurs, si vous souhaitez un 4x4 ou un guide pour la randonnée..." class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-green text-sm"></textarea>
+          </div>
+
+          <div id="form-status" class="hidden p-4 rounded-xl text-sm font-semibold"></div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-brand-green hover:bg-emerald-700 text-white font-bold text-base shadow-lg shadow-emerald-800/20 transition-all flex items-center justify-center gap-2">
+            <i data-lucide="compass" class="w-5 h-5"></i>
+            <span>Envoyer ma demande d'itinéraire</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4 md:col-span-1">
+          <div class="flex items-center gap-2">
+            <div class="w-9 h-9 rounded-xl bg-brand-green flex items-center justify-center text-white">
+              <i data-lucide="compass" class="w-5 h-5"></i>
+            </div>
+            <span class="font-serif font-black text-xl text-white tracking-tight">GUINÉE TOURISME</span>
+          </div>
+          <p class="text-xs leading-relaxed text-slate-400">
+            Portail promotionnel du patrimoine naturel, culturel et écotouristique de la République de Guinée.
+          </p>
+          <div class="flex items-center gap-2 pt-2">
+            <span class="w-3 h-3 rounded-full bg-[#CE1126]"></span>
+            <span class="w-3 h-3 rounded-full bg-[#FCD116]"></span>
+            <span class="w-3 h-3 rounded-full bg-[#009460]"></span>
+            <span class="text-[11px] font-bold text-slate-300 ml-1">Travail - Justice - Solidarité</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Découverte</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#regions" class="hover:text-brand-green">Les 4 Régions Naturelles</a></li>
+            <li><a href="#destinations" class="hover:text-brand-green">Cascades du Fouta</a></li>
+            <li><a href="#destinations" class="hover:text-brand-green">Îles de Loos & Plages</a></li>
+            <li><a href="#destinations" class="hover:text-brand-green">Réserve du Mont Nimba</a></li>
+          </ul>
+        </div>
+
+        <!-- Infos Pratiques -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Informations</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#pratique" class="hover:text-brand-green">Demande d'e-Visa Guinée</a></li>
+            <li><a href="#simulateur" class="hover:text-brand-green">Simulateur de Devis & Budget</a></li>
+            <li><a href="#culture" class="hover:text-brand-green">Gastronomie & Saveurs</a></li>
+            <li><a href="#pratique" class="hover:text-brand-green">Conseils Santé & Sécurité</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Restez Informé</h4>
+          <p class="text-xs text-slate-400 mb-3">Recevez chaque mois les meilleurs récits d'expéditions et guides de voyage.</p>
+          <div class="flex gap-2">
+            <input type="email" placeholder="Votre email" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-green flex-1">
+            <button class="bg-brand-green text-white px-3 py-2 rounded-xl text-xs font-bold hover:bg-emerald-600 transition-colors">OK</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 Guinée Tourisme. Fièrement conçu pour mettre en valeur les merveilles de la Guinée.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-slate-400">Mentions Légales</a>
+          <a href="#" class="hover:text-slate-400">Politique de Confidentialité</a>
+          <a href="#" class="hover:text-slate-400">Contact Presse</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MODAL DÉTAILS DESTINATION -->
+  <div id="destination-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 transform transition-all my-8 animate-modal-in">
+      
+      <div class="relative h-72">
+        <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+        <button id="modal-close" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black transition-colors" aria-label="Fermer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+        <span id="modal-region" class="absolute bottom-4 left-4 bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"></span>
+      </div>
+
+      <div class="p-6 sm:p-8 space-y-6">
+        <div>
+          <h3 id="modal-title" class="font-serif text-3xl font-black text-slate-900 mb-2"></h3>
+          <p id="modal-tagline" class="text-sm font-semibold text-brand-green flex items-center gap-1.5"></p>
+        </div>
+
+        <p id="modal-desc" class="text-slate-600 text-sm leading-relaxed"></p>
+
+        <!-- Points Clés -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 rounded-2xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-500 block mb-1">Accès</span>
+            <span id="modal-access" class="font-bold text-slate-800"></span>
+          </div>
+          <div class="p-3 rounded-2xl bg-slate-50 border border-slate-100">
+            <span class="text-slate-500 block mb-1">Meilleure Saison</span>
+            <span id="modal-season" class="font-bold text-slate-800"></span>
+          </div>
+          <div class="p-3 rounded-2xl bg-slate-50 border border-slate-100 col-span-2 sm:col-span-1">
+            <span class="text-slate-500 block mb-1">Activités</span>
+            <span id="modal-activities" class="font-bold text-slate-800"></span>
+          </div>
+        </div>
+
+        <!-- Action inside modal -->
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-4">
+          <button id="modal-add-carnet" class="flex-1 py-3 px-4 rounded-xl bg-brand-green hover:bg-emerald-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition-all">
+            <i data-lucide="bookmark-plus" class="w-4 h-4"></i>
+            <span>Ajouter à mon Carnet</span>
+          </button>
+          <a href="#planifier" onclick="closeModal()" class="py-3 px-4 rounded-xl border border-slate-300 hover:border-slate-400 text-slate-700 font-semibold text-sm">
+            Demander un guide
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DRAWER CARNET DE VOYAGE -->
+  <div id="carnet-drawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white shadow-2xl border-l border-slate-200 transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
+    
+    <!-- Header -->
+    <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-emerald-100 text-brand-green flex items-center justify-center">
+          <i data-lucide="bookmark" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="font-serif text-lg font-bold text-slate-900">Mon Carnet de Voyage</h3>
+          <p class="text-xs text-slate-500"><span id="carnet-count">0</span> destination(s) sauvegardée(s)</p>
+        </div>
+      </div>
+      <button id="close-carnet-btn" class="p-2 text-slate-400 hover:text-slate-700 rounded-full hover:bg-slate-100">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Carnet Items List -->
+    <div id="carnet-items" class="p-6 flex-1 overflow-y-auto space-y-4">
+      <!-- Items dynamically populated -->
+      <div id="carnet-empty" class="text-center py-16 text-slate-400">
+        <i data-lucide="map-pin-off" class="w-12 h-12 mx-auto stroke-1 mb-3 text-slate-300"></i>
+        <p class="text-sm font-medium">Votre carnet est vide pour le moment.</p>
+        <p class="text-xs text-slate-400 mt-1">Cliquez sur « Ajouter » sur les destinations pour composer votre itinéraire personnalisé !</p>
+      </div>
+    </div>
+
+    <!-- Footer Action -->
+    <div class="p-6 border-t border-slate-100 bg-slate-50 space-y-3">
+      <a href="#planifier" onclick="closeCarnet()" class="w-full block text-center py-3.5 px-4 rounded-xl bg-brand-green hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all">
+        Finaliser mon devis avec cette sélection
+      </a>
+      <button id="clear-carnet" class="w-full text-center text-xs text-slate-500 hover:text-brand-red font-medium py-1">
+        Vider mon carnet
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-sm border border-slate-700">
+    <i data-lucide="check-circle" class="w-5 h-5 text-brand-green"></i>
+    <span id="toast-message">Destination ajoutée à votre carnet !</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
